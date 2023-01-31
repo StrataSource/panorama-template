@@ -25,22 +25,22 @@ class MainMenu {
     }
 
     /**
-	 * Fired by C++ whenever main menu is switched from.
-	 */
+     * Fired by C++ whenever main menu is switched from.
+     */
     static onHideMainMenu() {
         UiToolkitAPI.CloseAllVisiblePopups();
     }
 
     /**
-	 * Fired by C++ whenever pause menu (i.e. main menu when in a map) is switched to.
-	 */
+     * Fired by C++ whenever pause menu (i.e. main menu when in a map) is switched to.
+     */
     static onShowPauseMenu() {
         this.panels.cp.AddClass('IsPaused');
     }
 
     /**
-	 * Fired by C++ whenever pause menu is switched from.
-	 */
+     * Fired by C++ whenever pause menu is switched from.
+     */
     static onHidePauseMenu() {
         this.panels.cp.RemoveClass('IsPaused');
     }
@@ -62,11 +62,11 @@ class MainMenu {
     }
 
     /**
-	 * Handles the escape key getting pressed
-	 * @param {unknown} _eSource - C++ dev needs to explain what these params do. Pressing in main menu returns "MainMenuInput"
-	 * @param {unknown} _nRepeats - Pressing in main menu returns "keyboard"
-	 * @param {unknown} _focusPanel - Pressing in main menu returns undefined
-	 */
+     * Handles the escape key getting pressed
+     * @param {unknown} _eSource - C++ dev needs to explain what these params do. Pressing in main menu returns "MainMenuInput"
+     * @param {unknown} _nRepeats - Pressing in main menu returns "keyboard"
+     * @param {unknown} _focusPanel - Pressing in main menu returns undefined
+     */
     static onEscapeKeyPressed(_eSource, _nRepeats, _focusPanel) {
         // Resume game in pause menu mode
         if (GameInterfaceAPI.GetGameUIState() === GameUIState.PAUSEMENU) {

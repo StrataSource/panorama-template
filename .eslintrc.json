@@ -1,21 +1,19 @@
 {
-	"env": {
-		"browser": false,
-		"es2021": true
-	},
-	"extends": [
-		"eslint:recommended"
-	],
-	"parserOptions": {
-		"ecmaVersion": "latest"
-	},
-	"rules": {
-		"no-undef": "off",
-		"no-ternary": "off",
+    "env": {
+        "browser": false,
+        "es2021": true
+    },
+    "extends": ["eslint:recommended"],
+    "parserOptions": {
+        "ecmaVersion": "latest"
+    },
+    "rules": {
+        "no-undef": "off",
+        "no-ternary": "off",
         "no-unused-vars": "off",
-		"arrow-parens": "error",
+        "arrow-parens": "error",
         "indent": ["error", 4],
-		"curly": "off",
+        "curly": "off",
         "quotes": ["error", "single", { "allowTemplateLiterals": true }],
         "semi": [2, "always"],
         "comma-dangle": ["error", "always-multiline"]

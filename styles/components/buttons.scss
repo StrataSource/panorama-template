@@ -1,10 +1,11 @@
-Button, TextButton {
+Button,
+TextButton {
     padding: 4px;
     margin: 4px;
     border-radius: 6px;
 
     &:hover {
-        background-color: #555
+        background-color: #555;
     }
     & Label {
         text-align: center;
