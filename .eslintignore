@@ -1,6 +1,7 @@
 fonts
 images
 layout
+scripts/__types_p2ce.js
 node_modules
 styles
 *.cfg
