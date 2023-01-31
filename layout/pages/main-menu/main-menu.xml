@@ -1,0 +1,80 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/main.scss" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/common/game-ui.js" />
+		<include src="file://{resources}/scripts/pages/main-menu/main-menu.js" />
+	</scripts>
+
+	<snippets>
+		<snippet name="MainMenuMovieSnippet">
+			<Panel>
+				<Movie
+					id="MainMenuMovie"
+					src=""
+					sound=""
+					controls="none"
+					repeat="true"
+					hittest="false"
+				>
+				</Movie>
+			</Panel>
+		</snippet>
+	</snippets>
+
+	<ChaosMainMenu
+		class="InitialDisplay MainMenuRootPanel"
+		hittest="false"
+		useglobalcontext="true"
+	>
+		<ChaosBackbufferImagePanel id="BackbufferImagePanel" />
+
+		<Panel id="MainMenuBackground">
+			<Panel id="MainMenuVanityParent" />
+			<Panel id="MainMenuMovieParent" />
+		</Panel>
+
+		<!-- Vanity is not used but the engine needs this to exist -->
+
+
+		<Panel id="MainMenuInput">
+			<Panel class="MainMenu">
+				<Label text="Main Menu" />
+
+				<TextButton
+					text="Load TripleLaser"
+					onactivate="$.DispatchEvent( 'LoadMap', 'sp_a2_triple_laser' );"
+				/>
+				<TextButton
+						text="Load P2 Campaign"
+						onactivate="$.DispatchEvent( 'LoadMap', 'sp_a1_intro1' );"
+				/>
+				<TextButton
+						text="Quit"
+						onactivate="$.DispatchEvent( 'QuitGame' );"
+				/>
+			</Panel>
+			<Panel class="PauseMenu">
+				<Label text="Pause Menu" />
+
+				<TextButton
+						text="Resume Game"
+						onactivate="$.DispatchEvent( 'ResumeGame' );"
+				/>
+
+				<TextButton
+						text="Back to MainMenu"
+						onactivate="$.DispatchEvent( 'LoadMainMenu' );"
+				/>
+			</Panel>
+		</Panel>
+
+		<ChaosPopupManager id="PopupManager" onpopupsdismissed="" />
+		<ContextMenuManager id="ContextMenuManager" />
+		<ChaosTooltipManager id="TooltipManager" hittest="false" />
+
+		<!-- Positions Steam Notifications -->
+		<Panel id="SteamNotificationsPlaceholder" hittest="false" />
+	</ChaosMainMenu>
+</root>

@@ -1,0 +1,42 @@
+@use 'components';
+@use 'loading-screen';
+@use 'console';
+
+#MainMenu,
+#MainMenuContainerPanel,
+#MainMenuInput,
+#MainMenuBackground,
+#MainMenuMovieParent,
+#MainMenuMovie,
+#BackbufferImagePanel {
+    width: 100%;
+    height: 100%;
+}
+
+#MainMenu {
+    & .MainMenu {
+        width: 100%;
+        height: 100%;
+        background-color: #222;
+        flow-children: down;
+        align: left top;
+    }
+    & .PauseMenu {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.6);
+        flow-children: down;
+        align: left top;
+    }
+
+    &.IsPaused {
+        & .MainMenu {
+            visibility: collapse;
+        }
+    }
+    &:not(.IsPaused) {
+        & .PauseMenu {
+            visibility: collapse;
+        }
+    }
+}
