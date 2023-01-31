@@ -1,0 +1,10 @@
+node_modules
+
+.vscode
+*.code-workspace
+
+.idea
+
+# Specific files
+learn.vdf
+__types_momentum.js

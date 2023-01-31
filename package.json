@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "lint": "npx eslint \"./**\"",
+    "fix": "npx eslint \"./**\" --fix"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.33.0"
+  }
+}
