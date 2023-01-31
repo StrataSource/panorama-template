@@ -9,6 +9,6 @@
 
 	<Panel class="LoadingScreen">
 		<ProgressBar id="ProgressBar" />
-		<Label text="Loading..." id="Test" />
+		<Label text="Loading..." />
 	</Panel>
 </root>
