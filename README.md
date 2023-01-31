@@ -37,4 +37,5 @@ This project defines some useful events for the main menu and pause menu. These 
 This project uses ESLint for linting. To install it, first make sure you have NodeJS installed. After running `npm install` in your terminal, you have access to the following scripts.
 
 -   `npm run lint` - This script runs a codestyle check on your project and returns warnings and errors in your terminal.
--   `npm run fix` - This script attempts to automatically fix any warnings and errors.
+-   `npm run prettier` - This script runs a codestyle check on your project via prettier and automatically fixes style differences.
+-   `npm run fix` - This script runs a codestyle check on your project and attempts to automatically fix any warnings and errors.

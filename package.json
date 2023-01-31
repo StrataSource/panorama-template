@@ -2,10 +2,12 @@
     "name": "panorama-template",
     "scripts": {
         "lint": "npx eslint \"./**\"",
-        "fix": "npx eslint \"./**\" --fix"
+        "fix": "npx eslint \"./**\" --fix",
+        "prettier": "npx prettier --write ."
     },
     "license": "MIT",
     "devDependencies": {
-        "eslint": "^8.33.0"
+        "eslint": "^8.33.0",
+        "prettier": "^2.8.3"
     }
 }
