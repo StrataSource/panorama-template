@@ -30,15 +30,14 @@
 	>
 		<ChaosBackbufferImagePanel id="BackbufferImagePanel" />
 
+        <!-- These panels are needed even if they are not used -->
 		<Panel id="MainMenuBackground">
 			<Panel id="MainMenuVanityParent" />
 			<Panel id="MainMenuMovieParent" />
 		</Panel>
 
-		<!-- Vanity is not used but the engine needs this to exist -->
-
-
 		<Panel id="MainMenuInput">
+            <!-- Any element within this panel will be displayed in the main menu -->
 			<Panel class="MainMenu">
 				<Label text="Main Menu" />
 
@@ -55,6 +54,8 @@
 						onactivate="$.DispatchEvent( 'QuitGame' );"
 				/>
 			</Panel>
+
+            <!-- Any element within this panel will be displayed in the pause menu -->
 			<Panel class="PauseMenu">
 				<Label text="Pause Menu" />
 
@@ -70,6 +71,7 @@
 			</Panel>
 		</Panel>
 
+        <!-- TODO: Support for Popups/ContextMenu and Tooltips -->
 		<ChaosPopupManager id="PopupManager" onpopupsdismissed="" />
 		<ContextMenuManager id="ContextMenuManager" />
 		<ChaosTooltipManager id="TooltipManager" hittest="false" />
