@@ -4,7 +4,7 @@ A template for Portal 2: Community Edition that contains everything needed to ge
 ## Documentation
 For more documentation on how Chaos uses Panorama, please check out the official [documentation](https://chaosinitiative.github.io/Wiki/docs/Panorama).
 
-## Folder Structure
+### Folder Structure
 * ``fonts/`` Contains custom fonts. Must be .ttf or .vfont files.
 * ``layout/`` This folder contains all xml layout files.
 * ``images/`` This folder contains svgs and images.
@@ -12,10 +12,20 @@ For more documentation on how Chaos uses Panorama, please check out the official
 * ``styles/`` This folder contains stylesheets loaded by layout files. Can be CSS/SASS/SCSS
 * ``media/`` This folder contains media styles such as background videos.
 
-
+### Configuration files
 * ``dev_keybinds.cfg`` These keybinds will be loaded when ``-dev`` is set as a startup option
 * ``panorama.cfg`` This is a configuration file that defines alias paths for panorama
 * ``default_keybinds.cfg`` This file contains default keybinds
+
+### Menu Events
+This project defines some useful events for the main menu and pause menu.  These can be seen and changed within ``scripts/pages/main-menu/main-menu.js``.
+
+| Event Name   | Parameters | Description                                                          |
+|--------------|------------|----------------------------------------------------------------------|
+| LoadMap      | MapName    | Creates a new session with the specified map file.                   |
+| ResumeGame   | *None*     | Hides the pause menu and continues the game.                         |
+| QuitGame     | *None*     | Closes the game completely.                                          |
+| LoadMainMenu | *None*     | Disconnects from the current session and goes back to the main menu. |
 
 ## Linting
 This project uses ESLint for linting. To install it, first make sure you have NodeJS installed. After running ``npm install`` in your terminal, you have access to the following scripts.
