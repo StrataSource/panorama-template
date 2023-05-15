@@ -1,32 +1,24 @@
 'use strict';
 
 class Console {
-    static onMoveDragStart(source, callback) {
-        callback.displayPanel = $.GetContextPanel();
-        callback.removePositionBeforeDrop = false;
-    }
+	/** @type {StaticConsoleMessageTarget} @static */
+	static messageTarget = $('#ConsoleMessageTarget');
 
-    static toggle() {
-        $.DispatchEvent('ToggleConsole');
-    }
+	static onMoveDragStart(_source, callback) {
+		callback.displayPanel = $.GetContextPanel();
+		callback.removePositionBeforeDrop = false;
+	}
 
-    static onNewMessages() {
-        $('#ConsoleMessageTarget').ScrollToBottom();
-    }
+	static toggle() {
+		$.DispatchEvent('ToggleConsole');
+	}
 
-    static setupFormat() {
-        // todo: it only applies the change if you close and reopen
-        if ($.persistentStorage.getItem('p2ce.console.quake') ?? false) {
-            $('#Console').AddClass('ConsoleQuake');
-            $('#ConsoleResizeDragKnob').horizontalDrag = false;
-        } else {
-            $.RegisterEventHandler('DragStart', $('#MoveDragArea'), Console.onMoveDragStart);
-            $('#ConsoleResizeDragKnob').horizontalDrag = true;
-        }
-    }
+	static onNewMessages() {
+		this.messageTarget.ScrollToBottom();
+	}
+
+	static {
+		$.RegisterEventHandler('DragStart', $('#MoveDragArea'), Console.onMoveDragStart);
+		$.RegisterEventHandler('NewConsoleMessages', 'ConsoleMessageTarget', Console.onNewMessages.bind(this));
+	}
 }
-
-(function () {
-    Console.setupFormat();
-    $.RegisterEventHandler('NewConsoleMessages', 'ConsoleMessageTarget', Console.onNewMessages);
-})();
